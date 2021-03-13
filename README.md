@@ -1,5 +1,6 @@
 # objetos-perdidos
-<img align="center" alt="Objetos Perdidos Home" width="800" src="/rosepernia/objetosperdidos/raw/master/public/muestra.png"
+![banner-objetosperdidos](https://raw.githubusercontent.com/rosepernia/objetosperdidos/master/muestra.png)
+
 Simulación de aplicación de objetos perdidos en el Metro de Madrid para registrar y buscar objetos previo registro.
 
 Buscador 
