@@ -27,6 +27,7 @@ daoUsuarios.getUsuarioByEmail = function getUsuarioByEmail(email) {
 daoUsuarios.login = function login(credenciales) {
     return new Promise((resolved, reject) => {
         daoUsuarios.getUsuarioByEmail(credenciales.email)
+        console.log(credenciales.nombre)
             .then(async usuario => {
                 if (usuario == null)
                     resolved({resultado:false, mensaje:{usuario:'Este usuario no existe'}})

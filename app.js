@@ -57,6 +57,6 @@ conexion.on('error',console.error.bind(console,'Error al conectar a mongo'))
 conexion.once('open',()=>console.log("Conexión con Mongo OK!!"))
 
 //puerto servidor:
-app.listen(3000,(err)=>{
-    console.log('Server run on port 3000')
+app.listen(3001,(err)=>{
+    console.log('Server run on port 3001')
 })
