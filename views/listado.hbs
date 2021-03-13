@@ -1,0 +1,64 @@
+<main>
+
+    <div class="container listado" id="tablon">
+        <div class="row">
+            <div class="form-header">
+                {{!-- <h4>Filtrar por nombre</h4> --}}
+                <input type="text" name="filtro" id="filtro" placeholder="Nombre objeto">
+                <button class="button" id="boton">BUSCAR</button>
+            </div>
+        </div>
+
+        <div class"row objetos">
+            {{#each objetosPerdidos}}
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-4">
+                     <img src="{{foto}}" style="width: 100%">
+                    </div>
+                    <div class="col-8 form-header">
+                        <h4>{{titulo}}<h4>
+                        <p class="listado">{{descripcion}}</p><br>
+                         <p class="listado">Encontrado en: {{localizacion}}</p>
+                         
+                        <a class="errText" href="/objetos/detalle/{{_id}}" id="editId"><p class="listado">REF: {{_id}}</p></a>
+
+                        <a class="errText" href="http://localhost:3000/objetos/editarobjeto" id="edit">Editar</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+</main>
+
+<script>
+
+    document.querySelector("#boton").onclick = () => {
+        let filtro = document.querySelector("#filtro")
+        fetch('/objetos/filtrar',
+            {
+                method: 'POST',
+                body: JSON.stringify({ titulo: filtro.value }),
+                headers: { 'Content-type': 'application/json' }
+            })
+            .then(res => res.json())
+            .then(listado => mostrarListado(listado))
+    }
+
+    function mostrarListado(listado) {
+        //limpiar contenedor
+        console.log(listado)
+        let tablon = document.querySelector("#tablon")
+        tablon.innerHTML = ""
+
+        //mostrar objetos filtrados
+        let objetoFiltrado = document.createElement("div")
+        listado.forEach(objeto => {
+            objetoFiltrado.innerHTML = objeto.titulo
+            tablon.appendChild(objetoFiltrado)
+        })
+    }
+
+
+
+</script>

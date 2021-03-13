@@ -1,0 +1,62 @@
+
+  <!--===============FORMULARIO DATOS OBJETO===============-->
+<main>
+<div class="container">
+                <div class="row">
+                    <div class="booking-form">
+                        <div class="form-header">
+                            <h1>Nuevo usuario</h1>
+                        </div>
+                        <form method="post" action="/usuarios/nuevousuario">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Nombre</span>
+                                        <input class="form-control" type="text" name="nombre" value="{{body.nombre}}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Teléfono</span>
+                                        <input class="form-control" type="text"
+                                           name="telefono" required>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">email</span>
+                                        <input class="form-control" type="email"
+                                             name="email" >
+                                         
+                                            {{!--  {{#if errEmail}}
+                                         <p class="errText">Parece que ya tienes una cuenta. Inicia sesión.</p>
+                                        {{/if}} --}}
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Constraseña</span>
+                                        <input class="form-control" type="password"
+                                             name="password" >  
+                                    </div>
+                                </div>
+                            
+                                   <div class="col-12 d-flex justify-content-center align-items-center">
+                                        <button class="submit" id="boton">Guardar</button>
+                                    </div>
+
+                                     <div class="col-8">
+                                        <p class="confirm">{{mensaje}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
